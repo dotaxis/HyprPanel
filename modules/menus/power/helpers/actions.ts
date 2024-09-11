@@ -33,7 +33,11 @@ class PowerMenu extends Service {
         this.notify("title");
         this.emit("changed");
         App.closeWindow("powermenu");
-        App.openWindow("verification");
+        if (action !== 'sleep') {
+            App.openWindow("verification");
+        } else {
+            Utils.execAsync(this.#cmd);
+        }
     }
 
     customAction(action: Action, cmnd: string) {
