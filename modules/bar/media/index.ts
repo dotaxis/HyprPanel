@@ -97,7 +97,9 @@ const Media = () => {
             on_primary_click: (clicked: any, event: Gdk.Event) => {
                 openMenu(clicked, event, "mediamenu");
             },
-            on_middle_click: () => Utils.execAsync("spotify")
+            on_middle_click: () => {
+                Utils.execAsync("bash -c \"$HOME/.config/ags/services/spotifylaunch.sh\"");
+            },
         },
     };
 };
