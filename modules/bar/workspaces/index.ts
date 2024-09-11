@@ -51,7 +51,7 @@ const Workspaces = (monitor = -1) => {
             }
         }
         return workspaceMask
-            ? `${index + 1}`
+            ? i % 10 == 0 ? `10` : `${i % 10}`
             : `${i}`;
     }
     const defaultWses = () => {

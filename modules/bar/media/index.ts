@@ -92,11 +92,12 @@ const Media = () => {
         boxClass: "media",
         name: "media",
         props: {
-            on_scroll_up: () => activePlayer.value?.next(),
-            on_scroll_down: () => activePlayer.value?.previous(),
+            on_scroll_up: () => activePlayer.value?.previous(),
+            on_scroll_down: () => activePlayer.value?.next(),
             on_primary_click: (clicked: any, event: Gdk.Event) => {
                 openMenu(clicked, event, "mediamenu");
             },
+            on_middle_click: () => Utils.execAsync("spotify")
         },
     };
 };
