@@ -216,9 +216,8 @@ const Workspaces = (monitor = -1) => {
                     }
 
                     return allWkspcs
-                        .sort((a, b) => {
-                            return a - b;
-                        })
+                        .sort((a, b) => a - b)
+                        .filter(i => i < 90)
                         .map((i, index) => {
                             return Widget.Button({
                                 class_name: "workspace-button",
