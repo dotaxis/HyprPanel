@@ -15,7 +15,10 @@ output)
     command="grimblast copysave output $outputPath"
     ;;
 area)
-    command="grimblast copysave area $outputPath"
+    command="grimblast --freeze copysave area $outputPath"
+    ;;
+all)
+    command="grimblast copysave screen $outputPath"
     ;;
 *)
     echo "Invalid option: $mode"
@@ -32,5 +35,5 @@ if eval "$command"; then
         -t 7000 \
         -u normal \
         --action="scriptAction:-xdg-open $outputDir=Directory" \
-        --action="scriptAction:-xdg-open $recentFile=View"
+        --action="scriptAction:-swappy -f $recentFile=Edit"
 fi
