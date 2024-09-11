@@ -19,7 +19,7 @@ export const PowerMenuSettings = () => {
                 Option({ opt: options.menus.power.shutdown, title: 'Shutdown Command', type: 'string' }),
                 Option({ opt: options.menus.power.reboot, title: 'Reboot Command', type: 'string' }),
                 Option({ opt: options.menus.power.logout, title: 'Logout Command', type: 'string' }),
-                Option({ opt: options.menus.power.sleep, title: 'Sleep Command', type: 'string' }),
+                Option({ opt: options.menus.power.sleep, title: 'Lock Command', type: 'string' }),
             ]
         })
     })

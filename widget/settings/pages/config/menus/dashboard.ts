@@ -23,7 +23,7 @@ export const DashboardMenuSettings = () => {
                 Option({ opt: options.menus.dashboard.powermenu.shutdown, title: 'Shutdown Command', type: 'string' }),
                 Option({ opt: options.menus.dashboard.powermenu.reboot, title: 'Reboot Command', type: 'string' }),
                 Option({ opt: options.menus.dashboard.powermenu.logout, title: 'Logout Command', type: 'string' }),
-                Option({ opt: options.menus.dashboard.powermenu.sleep, title: 'Sleep Command', type: 'string' }),
+                Option({ opt: options.menus.dashboard.powermenu.sleep, title: 'Lock Command', type: 'string' }),
 
                 Header('Resource Usage Metrics'),
                 Option({ opt: options.menus.dashboard.stats.enable_gpu, title: 'Track GPU', subtitle: 'NOTE: This is currently only available for NVidia GPUs and requires \'python-gpustat\'.', type: 'boolean' }),
