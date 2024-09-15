@@ -66,6 +66,8 @@ const Volume = () => {
             on_primary_click: (clicked: any, event: Gdk.Event) => {
                 openMenu(clicked, event, "audiomenu");
             },
+            on_scroll_up: () => Utils.execAsync(`${App.configDir}/services/volumecontrol.sh -o i 1`),
+            on_scroll_down: () => Utils.execAsync(`${App.configDir}/services/volumecontrol.sh -o d 1`),
         },
     };
 };

@@ -98,7 +98,7 @@ const Media = () => {
                 openMenu(clicked, event, "mediamenu");
             },
             on_middle_click: () => {
-                Utils.execAsync("bash -c \"$HOME/.config/ags/services/spotifylaunch.sh\"");
+                Utils.execAsync(`${App.configDir}/services/spotifylaunch.sh`);
             },
         },
     };
