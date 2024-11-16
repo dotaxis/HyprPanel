@@ -1220,7 +1220,7 @@ const options = mkOptions(OPTIONS, {
                     shortcut3: {
                         icon: opt('󰄀'),
                         tooltip: opt('Screenshot'),
-                        command: opt('bash -c "$HOME/.config/ags/services/snapshot.sh"'),
+                        command: opt('bash -c "snapshot.sh"'),
                     },
                 },
             },
