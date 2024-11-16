@@ -65,8 +65,8 @@ const Media = (): BarBoxChild => {
         isVis,
         boxClass: 'media',
         props: {
-            on_scroll_up: () => activePlayer.value?.next(),
-            on_scroll_down: () => activePlayer.value?.previous(),
+            on_scroll_up: () => activePlayer.value?.previous(),
+            on_scroll_down: () => activePlayer.value?.next(),
             on_primary_click: (clicked: Button<Child, Attribute>, event: Gdk.Event): void => {
                 openMenu(clicked, event, 'mediamenu');
             },
