@@ -12,7 +12,7 @@ const Shortcuts = (): BoxWidget => {
     const isRecording = Variable(false, {
         poll: [
             1000,
-            `${App.configDir}/services/screen_record.sh status`,
+            `screenrecorder.sh status`,
             (out): boolean => {
                 if (out === 'recording') {
                     return true;
@@ -44,13 +44,24 @@ const Shortcuts = (): BoxWidget => {
                         label: `Display ${mon.name}`,
                         on_activate: () => {
                             App.closeWindow('dashboardmenu');
-                            Utils.execAsync(`${App.configDir}/services/screen_record.sh start ${mon.name}`).catch(
+                            Utils.execAsync(`screenrecorder.sh toggle fullscreen ${mon.name}`).catch(
                                 (err) => console.error(err),
                             );
                         },
                     });
                 });
 
+                const region = [
+                    Widget.MenuItem({
+                        label: `Region`,
+                        on_activate: () => {
+                            App.closeWindow("dashboardmenu");
+                            Utils.execAsync(
+                                `screenrecorder.sh toggle region`,
+                            ).catch((err) => console.error(err));
+                        },
+                    }),
+                ];
                 // NOTE: This is disabled since window recording isn't available on wayland
                 // const apps = hyprland.clients.map((clt) => {
                 //     return Widget.MenuItem({
@@ -66,6 +77,7 @@ const Shortcuts = (): BoxWidget => {
 
                 self.children = [
                     ...displays,
+                    ...region,
                     // Disabled since window recording isn't available on wayland
                     // ...apps
                 ];
@@ -124,7 +136,7 @@ const Shortcuts = (): BoxWidget => {
                     } else if (shortcut.command === 'record') {
                         if (isRecording.value === true) {
                             App.closeWindow('dashboardmenu');
-                            return Utils.execAsync(`${App.configDir}/services/screen_record.sh stop`).catch((err) =>
+                            return Utils.execAsync(`screenrecorder.sh toggle`).catch((err) =>
                                 console.error(err),
                             );
                         } else {
