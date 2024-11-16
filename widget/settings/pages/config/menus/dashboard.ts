@@ -47,7 +47,7 @@ export const DashboardMenuSettings = (): Scrollable<Child, Attribute> => {
                 Option({ opt: options.menus.dashboard.powermenu.shutdown, title: 'Shutdown Command', type: 'string' }),
                 Option({ opt: options.menus.dashboard.powermenu.reboot, title: 'Reboot Command', type: 'string' }),
                 Option({ opt: options.menus.dashboard.powermenu.logout, title: 'Logout Command', type: 'string' }),
-                Option({ opt: options.menus.dashboard.powermenu.sleep, title: 'Sleep Command', type: 'string' }),
+                Option({ opt: options.menus.dashboard.powermenu.sleep, title: 'Lock Command', type: 'string' }),
 
                 Header('Controls'),
                 Option({ opt: options.menus.dashboard.controls.enabled, title: 'Enabled', type: 'boolean' }),

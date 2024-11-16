@@ -97,9 +97,9 @@ const Profile = (): BoxWidget => {
                     Widget.Button({
                         class_name: 'dashboard-button sleep',
                         on_clicked: () => handleClick('sleep'),
-                        tooltip_text: 'Sleep',
+                        tooltip_text: 'Lock',
                         vexpand: true,
-                        child: getIconForButton('󰤄'),
+                        child: getIconForButton('󰍁'),
                     }),
                 ],
             }),
