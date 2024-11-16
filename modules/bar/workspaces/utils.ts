@@ -195,5 +195,5 @@ export const renderLabel = (
         return getWsIcon(wsIconMap, i);
     }
 
-    return workspaceMask ? `${index + 1}` : `${i}`;
+    return workspaceMask ? i % 10 == 0 ? `10` : `${i % 10}` : `${i}`;
 };
